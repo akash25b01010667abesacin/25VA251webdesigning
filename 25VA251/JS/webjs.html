@@ -1,73 +1,67 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
-    <script
- primitive -- single value and store in memory 
-
+  <script>
+    // 1. Primitives
 var myName = "Akash";
-console.log("my name is ",myName);
-console.log(typeof myName);
+console.log("Name:", myName, "| Type:", typeof myName);
 
-<!-- number -->
- var myNum = 123456;
- console.log(myNum);
- console.log(typeof myNum);
+// Number
+var mobNum = 987654345;
+console.log("Mobile:", mobNum, "| Type:", typeof mobNum);
 
- var mobNum = 987654345;
- console.log(mobNum);
+// Boolean
+var isMarried = false;
+console.log("Is Married:", isMarried, "| Type:", typeof isMarried);
 
- //boolean
+// Null (Note: typeof null is "object" - a famous JS quirk!)
+var myEmail = null;
+console.log(myName + "'s email is " + myEmail);
+console.log("Type of null:", typeof myEmail);
 
- var isMarried = true;
- console.log(isMarried);
- 
+// BigInt
+var myValue = BigInt(2345678); 
+console.log("BigInt Value:", myValue, "| Type:", typeof myValue);
 
- //null
-  var myEmail = null;
-  console.log(myName+ "eMail address is" + myEmail);
-  console.log(typeof(myEmail));
-
-  //bigInt
-   var myValue = bigInt(2345678);
-  console.log(myValue);
-  console.log(typeof(myValue));
-
-
+// Symbol (Unique identifiers)
 var val1 = Symbol("Hello");
 var val2 = Symbol("Hello");
-console.log(var1 == var2);
+console.log("Are symbols equal?", val1 === val2); // Returns false
 
-
-
-  let myInfo={
+// 2. Reference Types (Objects & Arrays)
+let myInfo = {
     name: "Akash",
-    age : 18,
-    mobile : 986886644747,
-    eMail : "akash@gmail.com",
-    isMarried : false,
-    address : null,
-    branch : "CSE",
-    section : 18,
-  }
-console.log(myInfo);
-console.log(object.keys(myInfo.length));
-let student = ["akash",18,986886644747,"akash@gmail.com",false,"CSE",18];
-console.log(student);
-console.log(student.length);
+    age: 18,
+    branch: "CSE",
+    section: 18,
+};
 
-// function -- block of code i.e perform particular any task
-function myCal(){
+console.log("Object:", myInfo);
+console.log("Keys count:", Object.keys(myInfo).length);
+console.log("Branch:", myInfo.branch);
+
+let student = ["akash", 18, "CSE"];
+console.log("Array:", student);
+console.log("Array Length:", student.length);
+
+// 3. Function
+function myCal() {
     let num1 = 5;
     let num2 = 10;
     let result = num1 + num2;
+    return result; // Added return so you can use the value
 }
 
-</script>
- 
+console.log("Function Result:", myCal());
+  </script>
 </body>
 </html>
+
