@@ -7,21 +7,25 @@
 </head>
 <body>
     <h1>JAVA SCRIPT</h1>
-    <!-- var declaration -->
+  
 
     <script>
-        var myName = "ABESEC";
+    // var declaration
+    // no space bw words , no numeric words,no reserve keywords
+
+    //using var
+        var myName = "ABESEC"; //global ,attach with windwo object with this variable
         document.write(myName);
         console.log(myName);
 //JS execution (global and local(block)scope)
 function hello(){
-    var Mynum = 432345;
+    var Mynum = 432345; //local or block levev
     console.log(Mynum);
 }
 hello();
 
         // from ES6   let and const
-
+        // while those declared with let and const do not , though they remain globally accessible within the script.
         let msg = "Welcome";
         console.log(msg);
 

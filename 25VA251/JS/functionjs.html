@@ -1,0 +1,205 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function in JS</title>
+</head>
+<body>
+    <script>
+    // Function:-block of code that perform a particler task
+    
+    // normal , with para, without para and default 
+
+    // noraml function
+
+   /*  function demo(){
+        console.log("Hello ABES");
+    }
+    demo(); */ //function calling or function invocation
+
+    //with parameters
+   /*  function cal(a,b){
+        var num1=a;
+        var num2=b;
+        console.log("Additon of two number is " + (num1+num2));
+    } 
+    cal(3,5) */
+    // with defaut para
+
+
+   /*  function add(a,b=5){
+        var num1=a;
+         var num2=b;
+      var res1=num1+num2;
+      console.log("Addition is " + res1);
+    }
+
+    function mul(a,b=8){    
+   var num1=a;
+    var num2=b;
+        var res2=num1*num2;
+        console.log("Multiplication is " + res2);
+    }
+    function div(a,b=6){
+            var num1=a;
+          var num2=b;
+        var res3=num1/num2;
+        console.log("Division is " + res3);
+    }
+    add(10,23);
+    div(30);
+    mul(20); */
+    //annoymous function:-An anonymous function in JavaScript is a function that does not have a name or an identifier associated with it. These functions are primarily used for short, one-time tasks and are often assigned to variables or passed as arguments to other functions.
+
+ /*  let demo1=function(){
+  console.log("hello ABES");
+  }
+  demo1(); */
+  //shortes way to write above function i.e. arrow function
+ /*  let demo1=()=>{
+     console.log("Hello JS");
+  }
+  demo1(); */
+  // above function in signle line
+  let demo1=()=>console.log("Hello Java Script");
+  demo1();
+
+  //An Immediately Invoked Function Expression (IIFE) in JavaScript runs as soon as it is defined. The primary syntax involves wrapping the function in parentheses to treat it as an expression, followed by another pair of parentheses to call it immediately.
+
+  (function(){
+    console.log("IIFE in JS");
+  })();
+//Call Back Function:- 
+//A callback function in JavaScript is a function passed as an argument to another function, which is then executed inside the outer function at a later time or upon a specific event. This is a key mechanism for handling both synchronous and asynchronous operations.
+
+//callback in synchronous
+/* function addRes(callback){
+    var num1=5;
+    var num2=10;
+    var res=num1+num2;
+    callback(res)
+}
+function result(res){
+    console.log("Addiontion of two number is " + res);
+}
+addRes(result); */
+//callback in asynchronous using setTimeout API
+
+/* function hello(){
+    console.log("Hello JS");
+}
+
+function process(){
+    console.log("processing");
+}
+setTimeout(hello, 5000);
+process(); */
+
+//another example using call back
+
+function display(callback){
+    console.log("Display data from server");
+
+setTimeout(function(){
+    let data={
+        name:"Vikas",
+        age:23,
+        isMarried:null
+    };
+
+callback(data)
+},2000);
+};
+function displayUser(user){
+    console.log(`${user.name} age is ${user.age} and ${user.isMarried}`);
+}
+display(displayUser);
+
+//Promises:- A JavaScript Promise is an object representing the eventual outcome (completion or failure) of an asynchronous operation.
+//A promise object exists in one of three states: 
+
+/* Pending: The initial state; the operation is still in progress.
+Fulfilled: The operation completed successfully, and a result value is available.
+Rejected: The operation failed, and an error (reason) is available.  */
+
+let myPromises=new Promise(function(resolve, reject){
+    let age =25;
+    if(age>=18){
+        resolve("valid age");
+    }
+    else{
+        reject("wait for next year");
+    }
+});
+myPromises
+.then(result=>console.log(result))
+.catch(error=>console.log(error))
+.finally(console.log("Done"));
+
+// async await.. and fectching API using try catch
+// async and await are special JavaScript keywords introduced in ES2017 (ECMAScript 8) that provide a cleaner, more synchronous-looking way to work with Promises
+
+async function userData(){
+    try{
+         let response=await fetch('https://api.github.com/users/ersanjeevsoni');
+    let responseData=await response.json();
+    console.log(responseData);
+    }
+    catch(error){
+        console.log(error);
+    }  
+}
+userData();
+
+//higher order function:- 
+//Higher-order functions help make your code more reusable and modular by allowing you to work with functions like any other value.
+
+//map:- The map function is used to transform an array by applying a callback function to each element. It returns a new array.
+
+let num=[3,4,5,6,7];
+let square=num.map(n=>n*n);
+console.log(square);
+
+//reduce:- The reduce function accumulates array elements into a single value based on a callback function.
+let sum=num.reduce((total,n)=>total+n);
+console.log(sum);
+//The filter function is used to create a new array containing elements that satisfy a given condition.
+let sorting=num.filter(n=>n>3);
+console.log(sorting);
+//forEach
+// The forEach function executes a provided function once for each array element.
+
+num.forEach((n) => console.log(n * 2));
+
+// IIFE:- is a JavaScript function that runs as soon as it is defined.
+(function(){
+    console.log("Modern JS");
+})();
+//short code for above code using arrow
+
+(msg=>console.log("Hello React"))();
+
+
+//Local Storage:-JavaScript localStorage is part of the Web Storage API that allows web applications to store persistent data (key-value pairs) in the user's browser with no expiration date.
+
+let userInfo={
+    name:'John',
+    age:25,
+    mob:7967665786585,
+    eMail:"john23@gmail.com"
+};
+// Store the object as a JSON string
+localStorage.setItem('userInfo', JSON.stringify(userInfo));
+
+// Retrieve the string and parse it back into an object
+const savedUser = JSON.parse(localStorage.getItem('userInfo'));
+console.log(savedUser.name); // Outputs: John
+
+
+    </script>
+    
+</body>
+</html>
