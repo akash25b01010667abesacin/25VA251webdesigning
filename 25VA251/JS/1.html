@@ -1,0 +1,47 @@
+
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --color-clifford: #da373d;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 flex flex-col items-center justify-center min-h-screen gap-6 p-6">
+    
+    <!-- Heading -->
+    <h1 class="text-4xl font-bold text-clifford underline">
+      Tailwind Demo Showcase
+    </h1>
+
+    <!-- Buttons -->
+    <div class="flex gap-4">
+      <button class="bg-sky-500 text-white px-4 py-2 rounded hover:bg-sky-600">Primary</button>
+      <button class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Success</button>
+      <button class="bg-clifford text-white px-4 py-2 rounded hover:bg-red-700">Danger</button>
+    </div>
+
+    <!-- Card -->
+    <div class="bg-white shadow-lg rounded-lg p-6 w-80">
+      <h2 class="text-xl font-semibold mb-2">Card Title</h2>
+      <p class="text-gray-600 mb-4">
+        This is a simple card component styled with Tailwind. It demonstrates padding, rounded corners, and shadows.
+      </p>
+      <button class="bg-sky-500 text-white px-4 py-2 rounded hover:bg-sky-600 w-full">
+        Action
+      </button>
+    </div>
+
+    <!-- Responsive Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 w-full max-w-4xl mt-6">
+      <div class="bg-white p-4 rounded shadow">Grid Item 1</div>
+      <div class="bg-white p-4 rounded shadow">Grid Item 2</div>
+      <div class="bg-white p-4 rounded shadow">Grid Item 3</div>
+    </div>
+
+  </body>
+</html>
